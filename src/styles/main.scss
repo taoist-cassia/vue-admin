@@ -1,1 +1,8 @@
 @import './normalize.scss';
+
+//for循环定义 padding偏移值
+// @for $i from 1 through 110 {
+//     // .padding-top-#{$i * 5} {padding-top:(5px * $i); }
+//     .padding-top-#{$i} {padding-top:(1px * $i); }
+//     .padding-bottom-#{$i} {padding-bottom:(1px * $i); }
+// }
