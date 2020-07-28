@@ -12,6 +12,13 @@ Vue.use(VueCompositionApi);
 
 Vue.config.productionTip = false;
 
+
+import * as Api from './api/api'//寻找文件post
+import * as ApiGet from './api/apiGet'//get
+
+Vue.prototype.$api = Api;
+Vue.prototype.$apiGet = ApiGet;
+
 new Vue({
   router,
   store,
