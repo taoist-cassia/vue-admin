@@ -23,7 +23,7 @@
                     <label>验证码</label>
                     <el-row :gutter="20">
                         <el-col :span="15"><el-input type="text" v-model.number="ruleForm.code" minlength="1" maxlength="6"></el-input></el-col>
-                        <el-col :span="9"> <el-button type="success" @click="submitForm('ruleForm')" class="block">获取验证码</el-button></el-col>
+                        <el-col :span="9"> <el-button type="success" @click="getSms()" class="block">获取验证码</el-button></el-col>
                     </el-row>
                 </el-form-item>
                 <el-form-item>
@@ -40,7 +40,15 @@
     export default{
         name: 'login',
         // setup(props,context){
-        setup(props,{ refs }){
+        /**
+        *attrs: (...) == this.$attrs
+        emit: (...) == this.$emit
+        listeners: (...) == this.$listeners
+        parent: (...) == this.$parent
+        refs: (...) == this.$refs
+        root: (...) == this
+        */
+        setup(props,{ refs, root}){
             //这里面放置data数据，生命周期，自定义的函数
 
             //验证用户名
@@ -149,6 +157,15 @@
                     }
                 });
             })
+            //获取验证码
+            const getSms = (()=>{
+                root.$api.getSms({
+                    username: '1111111@qq.com',
+                    module: 'login'
+                },res => {
+                    console.log(res);
+                })
+            })
             const resetForm = (formName => {
                 refs[formName].resetFields();
             })
@@ -164,6 +181,7 @@
                 ruleForm,
                 rules,
                 toggleMenu,
+                getSms,
                 submitForm,
                 resetForm
             }
