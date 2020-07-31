@@ -16,11 +16,13 @@
  
  <style lang="scss" scoped>
     #main-wrap{
-        width: 100vw;
-        height: 100vh;
-        padding: 75px 0 0 250px;
+        position: fixed;
+        top: $layoutHeader;
+        left: $navMenu;
+        right: 0;
+        bottom: 0;
+        padding: 30px;
+        border: 30px solid #f7f7f7;
         box-sizing: border-box;
-        
-        
     }
  </style>

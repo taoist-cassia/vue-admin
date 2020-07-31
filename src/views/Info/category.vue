@@ -1,12 +1,13 @@
 <template>
-    
+    <div>
+        信息类别
+    </div>
 </template>
 
 <script>
     export default{
-        name:'console',
         setup(){
-
+            
         }
     }
 </script>

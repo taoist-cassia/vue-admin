@@ -18,9 +18,9 @@
     #header-wrap{
         position: fixed;
         top: 0;
-        left: 250px;
+        left: $navMenu;
         right: 0;
-        height: 75px;
+        height: $layoutHeader;
         background-color: #fff;
         -webkit-box-shadow: 0 3px 16px 0 rgba(0,0,0,.1);
         box-shadow: 0 3px 16px 0 rgba(0,0,0,.1);

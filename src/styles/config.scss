@@ -1,0 +1,55 @@
+// 后台框架尺寸
+// 菜单宽度
+$navMenu: 250px;
+$navMenuMin: 64px;
+$layoutHeader: 75px;
+
+// 主颜色
+$mainCcolor: #f56c6c;
+
+// 定义浏览器内核属性
+@mixin webkit($type, $value){
+    -webkit-#{$type}: $value;
+    -moz-#{$type}: $value;
+    -ms-#{$type}: $value;
+    -o-#{$type}: $value;
+    #{$type}: $value;
+}
+
+
+@mixin labelDom($align, $width, $line-height: "normal"){
+    label {
+        float: left;
+        width: $width + px;
+        text-align: $align;
+        line-height: $line-height + px;
+    }
+    .warp-content {
+        margin-left: $width + px;
+    }
+}
+
+// @mixin ell($number){
+//     display: -webkit-box;
+//     -webkit-line-clamp: $number;
+//     -webkit-box-orient: vertical;
+//     overflow: hidden;
+// }
+
+// // for循环定义 padding 偏移值
+// @for $i from 1 through 110 {
+//     .padding-top-#{$i} { padding-top:(1px * $i); }
+//     .padding-bottom-#{$i} { padding-bottom:(1px * $i); }
+// }
+
+// // clearfix 清除浮动
+// .clearfix:after{
+//     content: ".";
+//     display: block;
+//     height: 0;
+//     clear: both;
+//     visibility: hidden;
+// }
+//  .clearfix{ display: inline-block; }
+// * html .clearfix{ height: 1%; }
+// .clearfix { display: block; }
