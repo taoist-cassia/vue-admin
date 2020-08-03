@@ -6,7 +6,8 @@
 
 <script>
     export default{
-        setup(){
+        name:"infoIndex",
+        setup(props){
             
         }
     }

@@ -2,24 +2,28 @@
     <div id="nav-wrap">
         <el-menu 
             default-active="1-4-1"
+            @open="handleOpen"
+            @close="handleClose"
+            :collapse="isCollapse"
             class="el-menu-vertical-demo"
             background-color="transparent"
             text-color="#fff" 
             active-text-color="#fff"
-            @open="handleOpen"
-            @close="handleClose"
-            :collapse="isCollapse"
             router>
 
             <template v-for="(item,index) in routers" >
-                <el-submenu :key="item.id" :index="index" v-if="!item.hidden">
+                <el-submenu  v-if="!item.hidden" :key="item.id" :index="index + ''">
                     <!-- 一级菜单 -->
                     <template slot="title">
-                        <i class="el-icon-location"></i>
+                        <i :class="item.meta.icon"></i>
                         <span slot="title">{{item.meta.name}}</span>
                     </template>
                     <!-- 子级菜单 -->
-                    <el-menu-item v-for="subItem in item.children" :key="subItem.id" :index="subItem.path">{{subItem.meta.name}}</el-menu-item>
+                    <template v-for="subItem in item.children">
+                        <el-menu-item v-if="!subItem.hidden" :key="subItem.id" :index="subItem.path">
+                            {{subItem.meta.name}}
+                        </el-menu-item>
+                    </template>
                 </el-submenu>
             </template>
 

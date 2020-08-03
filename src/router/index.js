@@ -26,7 +26,8 @@ export default new Router({
         path: "/console",
         name: "Console",
         meta:{
-          name: "控制台"
+          name: "控制台",
+          icon: "el-icon-s-platform"
         },
         component: () => import("@/views/Layout/index.vue"),
         children:[{
@@ -42,7 +43,8 @@ export default new Router({
         path: "/info",
         name: "Info",
         meta:{
-          name: "信息管理"
+          name: "信息管理",
+          icon: "el-icon-message-solid"
         },
         component: () => import("@/views/Layout/index.vue"),
         children:[{
@@ -65,7 +67,8 @@ export default new Router({
         path: "/user",
         name: "User",
         meta:{
-          name: "用户管理"
+          name: "用户管理",
+          icon: "el-icon-s-custom"
         },
         component: () => import("@/views/Layout/index.vue"),
         children:[{
